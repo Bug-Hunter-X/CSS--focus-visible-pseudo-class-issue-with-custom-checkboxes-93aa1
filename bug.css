@@ -1,0 +1,1 @@
+The following CSS code snippet demonstrates an issue with unexpected behavior when using the `:focus-visible` pseudo-class in conjunction with custom checkbox styles. The checkbox visually appears unchecked after clicking, even when it is programmatically checked in JavaScript.  This occurs specifically when the checkbox is initially focused.
