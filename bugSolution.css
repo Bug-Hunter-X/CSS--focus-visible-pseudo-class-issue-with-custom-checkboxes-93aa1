@@ -1,0 +1,72 @@
+/* bugSolution.css */
+
+/* Style the checkbox container */
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide the default checkbox */
+.checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background color */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Add the check mark */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the check mark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the check mark */
+.checkbox-container input:checked ~ .checkmark:after {
+  content: "\2713";
+  display: block;
+  width: 16px;
+  height: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+}
+
+/* Manage focus-visible state explicitly (Solution) */
+.checkbox-container input:focus-visible ~ .checkmark {
+  outline: 2px solid #2196F3; /* Add a clear focus indicator */
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2); /* Optional: Add a focus glow */
+}
+
+/* Additional specificity added to ensure correct visual representation after click */
+.checkbox-container input:checked:focus-visible ~ .checkmark {
+    background-color: #2196F3;
+}
